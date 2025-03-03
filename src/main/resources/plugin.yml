@@ -1,0 +1,6 @@
+name: kx-meteors
+version: '2.0-RELEASE'
+main: pl.kaxtusik.meteor.Plugin
+api-version: '1.18'
+authors: [ kaxtusik ]
+website: https://discord.com/users/549599621056561152
