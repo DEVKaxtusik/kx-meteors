@@ -45,9 +45,13 @@ public final class Plugin extends JavaPlugin {
 
     private void loadCommands() {
         liteCommands = LiteBukkitFactory.builder("kx",this)
-                .commands(new MeteorCommand())
-                .missingPermission(new PermissionHelper())
+                .commands(injector.getInstance(MeteorCommand.class))
+                .missingPermission(injector.getInstance(PermissionHelper.class))
                 .build();
+    }
+
+    public RewardManager getRewardManager() {
+        return rewardManager;
     }
 
     public FoliaLib getFoliaLib() {

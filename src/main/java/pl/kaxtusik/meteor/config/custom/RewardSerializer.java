@@ -7,7 +7,7 @@ import eu.okaeri.configs.serdes.SerializationData;
 import org.bukkit.inventory.ItemStack;
 import pl.kaxtusik.meteor.model.Reward;
 
-public class RewardResolver implements ObjectSerializer<Reward> {
+public class RewardSerializer implements ObjectSerializer<Reward> {
     @Override
     public boolean supports(Class<? super Reward> type) {
         return Reward.class.isAssignableFrom(type);

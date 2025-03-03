@@ -29,6 +29,9 @@ repositories {
     maven {
         url = "https://repo.alessiodp.com/releases/"
     }
+    maven {
+        url = "https://maven.enginehub.org/repo/"
+    }
 }
 
 dependencies {
@@ -39,6 +42,8 @@ dependencies {
     implementation 'eu.okaeri:okaeri-configs-serdes-bukkit:5.0.6'
     implementation 'com.google.inject:guice:7.0.0'
     implementation 'net.byteflux:libby-bukkit:1.3.1'
+    implementation 'dev.triumphteam:triumph-gui:3.1.11'
+    compileOnly 'com.sk89q.worldguard:worldguard-bukkit:7.0.7'
 }
 
 shadowJar {
@@ -48,7 +53,7 @@ shadowJar {
     relocate "com.google", "pl.kaxtusik.meteor.lib.guice"
     relocate "jakarta.inject", "pl.kaxtusik.meteor.lib.jakarta"
     relocate "javax.annotation", "pl.kaxtusik.meteor.lib.annotation"
-    relocate "org", "pl.kaxtusik.meteor.lib.utils"
+    relocate "dev.triumphteam","pl.kaxtusik.meteor.lib.triumph-gui"
 }
 
 def targetJavaVersion = 17

@@ -7,7 +7,7 @@ import eu.okaeri.configs.yaml.bukkit.YamlBukkitConfigurer;
 import eu.okaeri.configs.yaml.bukkit.serdes.SerdesBukkit;
 import pl.kaxtusik.meteor.Plugin;
 import pl.kaxtusik.meteor.config.Rewards;
-import pl.kaxtusik.meteor.config.custom.RewardResolver;
+import pl.kaxtusik.meteor.config.custom.RewardSerializer;
 
 import java.io.File;
 
@@ -24,7 +24,7 @@ public class RewardsProvider implements Provider<Rewards> {
     public Rewards get() {
         return ConfigManager.create(Rewards.class, (it) -> {
             it.withConfigurer(new YamlBukkitConfigurer(), new SerdesBukkit());
-            it.withSerdesPack(registry -> registry.register(new RewardResolver()));
+            it.withSerdesPack(registry -> registry.register(new RewardSerializer()));
             it.withBindFile(new File(plugin.getDataFolder(), "storage.yml"));
             it.withRemoveOrphans(true);
             it.saveDefaults();
